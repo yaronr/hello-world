@@ -6,10 +6,10 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
 RUN git clone https://github.com/fermayo/hello-world-php.git /app
 
 # Add image configuration and scripts
-ADD ./start.sh /start.sh
-ADD ./run.sh /run.sh
+ADD https://raw.github.com/tutumcloud/docker-hello-world/master/start.sh /start.sh
+ADD https://raw.github.com/tutumcloud/docker-hello-world/master/run.sh /run.sh
 RUN chmod 755 /start.sh && chmod 755 /run.sh
-ADD ./supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
+ADD https://raw.github.com/tutumcloud/docker-hello-world/master/supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
 
 # Configure /app folder
 RUN mkdir -p /app && rm -fr /var/www && ln -s /app /var/www
