@@ -21,7 +21,7 @@ Running your Hello World docker image
 
 Start your image:
 
-	sudo docker run -d tutum/hello-world
+	sudo docker run -d -p 80 tutum/hello-world
 
 It will print the new container ID (like `d35bf1374e88`). Get the allocated external port:
 
