@@ -5,4 +5,4 @@ RUN mkdir -p /tmp/nginx && echo "clear_env = no" >> /etc/php/php-fpm.conf
 ADD www /www
 ADD nginx.conf /etc/nginx/
 EXPOSE 80
-CMD php-fpm -d variables_order="EGPCS" && nginx -g "daemon off;"
+CMD php-fpm -d variables_order="EGPCS" && exec nginx -g "daemon off;"
